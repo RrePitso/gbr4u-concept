@@ -6,7 +6,7 @@
     <title>GBR4U | Generating Business Referrals for You</title>
     <link rel="icon" href="img/logo.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
@@ -14,46 +14,35 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            blue: '#0e3a5d', /* Deep Corporate Blue */
-                            green: '#4caf50', /* Growth Green */
-                            light: '#f8fafc',
-                            accent: '#fbbf24' /* Gold Accent */
+                        gbr: {
+                            red: '#E60000',    /* The "GBR" Red */
+                            green: '#8CC63F',  /* The "4" Lime Green */
+                            blue: '#009FE3',   /* The "U" Cyan Blue */
+                            dark: '#1a1a1a',   /* For text/footers */
+                            light: '#f4f4f5',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'ticker': 'ticker 30s linear infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        ticker: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-100%)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Live Ticker Animation */
         .ticker-wrap {
             width: 100%;
             overflow: hidden;
-            background-color: #0e3a5d;
+            background-color: #1a1a1a;
             color: white;
             padding: 8px 0;
+            border-bottom: 3px solid #8CC63F; 
         }
         .ticker {
             display: flex;
             white-space: nowrap;
-            animation: ticker 40s linear infinite;
+            animation: ticker 45s linear infinite;
         }
         .ticker-item {
             padding: 0 2rem;
@@ -63,264 +52,408 @@
             font-size: 0.85rem;
             font-weight: 500;
         }
-        .ticker-item i { color: #4caf50; }
+        .ticker-item span.highlight { color: #8CC63F; font-weight: bold; }
         
-        /* Smooth Scroll behavior */
-        html { scroll-behavior: smooth; }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Gradient Text */
+        .brand-gradient {
+            background: linear-gradient(to right, #E60000, #009FE3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#009FE3 0.5px, transparent 0.5px), radial-gradient(#E60000 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-white text-slate-800 font-sans">
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Plumbing (Vincent) - Just now</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Financial Planning (Beacon Bay) - 2m ago</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Legal Services (Berea) - 5m ago</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Pest Control (Gonubie) - 12m ago</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: IT Support (Selborne) - 15m ago</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Plumbing (Vincent) - Just now</div>
-            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Financial Planning (Beacon Bay) - 2m ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Raptor Engineering</span> received a referral from MKB Attorneys (2m ago)</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Willie Du Plessis</span> received a referral from Target Marketing (5m ago)</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Pest Control</span> passed business to IT Support (12m ago)</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Real Estate</span> received a referral from Body Shop (25m ago)</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Raptor Engineering</span> received a referral from MKB Attorneys (2m ago)</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4 text-gbr-green"></i> <span class="highlight">Willie Du Plessis</span> received a referral from Target Marketing (5m ago)</div>
         </div>
     </div>
 
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3">
-                <img src="img/logo.ico" alt="GBR4U Logo" class="h-10 w-auto">
-                <div class="leading-none hidden md:block">
-                    <span class="block font-black text-xl tracking-tighter text-brand-blue">GBR<span class="text-brand-green">4U</span></span>
-                    <span class="block text-[0.6rem] font-bold text-slate-400 uppercase tracking-widest">Business Networking</span>
-                </div>
+            <a href="#" class="flex items-center gap-2">
+                <img src="img/logo.png" alt="GBR4U" class="h-10 w-auto object-contain">
+                <span class="hidden md:block font-black text-2xl tracking-tighter">
+                    <span class="text-gbr-red">GBR</span><span class="text-gbr-green">4</span><span class="text-gbr-blue">U</span>
+                </span>
             </a>
-            
-            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-500 uppercase tracking-wide items-center">
-                <a href="#" class="text-brand-blue">Home</a>
-                <a href="#" class="hover:text-brand-blue transition">Find a Pioneer</a>
-                <a href="#" class="hover:text-brand-blue transition">Events</a>
-                <a href="#" class="hover:text-brand-blue transition">About</a>
+
+            <button class="md:hidden text-slate-600" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+
+            <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-wide text-slate-600 items-center">
+                <a href="#home" class="hover:text-gbr-blue transition">Home</a>
+                <a href="#about" class="hover:text-gbr-blue transition">About</a>
+                <a href="#pioneers" class="hover:text-gbr-blue transition">Pioneers</a>
+                <a href="#events" class="hover:text-gbr-blue transition">Events</a>
+                <a href="#contact" class="hover:text-gbr-blue transition">Contact</a>
             </div>
 
-            <div class="flex gap-4 items-center">
-                <button class="text-brand-blue font-bold text-sm hover:underline flex items-center gap-2">
-                    <i data-lucide="lock" class="w-4 h-4"></i> Login
+            <div class="hidden md:flex gap-4">
+                <button class="flex items-center gap-2 text-slate-600 font-bold text-sm hover:text-gbr-red transition">
+                    <i data-lucide="lock" class="w-4 h-4"></i> Member Login
                 </button>
-                <button class="bg-brand-green text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-green-600 transition shadow-lg shadow-green-100 flex items-center gap-2">
+                <button class="bg-gbr-blue text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-sky-600 transition shadow-lg shadow-sky-100">
                     Join Network
                 </button>
             </div>
         </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 space-y-4 shadow-lg">
+            <a href="#home" class="block font-bold text-slate-600">Home</a>
+            <a href="#about" class="block font-bold text-slate-600">About Us</a>
+            <a href="#pioneers" class="block font-bold text-slate-600">Find a Pioneer</a>
+            <a href="#contact" class="block font-bold text-slate-600">Contact</a>
+            <div class="h-px bg-slate-100 my-2"></div>
+            <button class="w-full bg-gbr-green text-white py-3 rounded font-bold">Member Login</button>
+        </div>
     </nav>
 
-    <header class="bg-white pt-24 pb-32 border-b border-slate-200 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50 -z-10 animate-float"></div>
+    <header id="home" class="relative pt-24 pb-32 overflow-hidden bg-slate-50">
+        <div class="absolute inset-0 hero-pattern"></div>
         
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <div class="inline-flex items-center gap-2 bg-blue-50 text-brand-blue px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-blue-100">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Local is Lekker • Eastern Cape
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white border border-gbr-green text-gbr-dark px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-gbr-green animate-pulse"></span>
+                Generating Business Referrals
             </div>
             
             <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-tight">
-                Grow Your Business with <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-green">Trusted Referrals.</span>
+                Grow Your Business through <br/>
+                <span class="text-gbr-blue">Trusted Connections.</span>
             </h1>
             
-            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto">
-                Join East London's most active business network. We connect you with verified local professionals to help you scale through word-of-mouth.
+            <p class="text-xl text-slate-500 mb-10 max-w-2xl mx-auto">
+                Join the Eastern Cape's most active business network. We connect you with verified local professionals to scale your business through the power of word-of-mouth.
             </p>
 
             <div class="bg-white p-2 rounded-full shadow-2xl border border-slate-200 max-w-3xl mx-auto flex items-center gap-2 transform hover:-translate-y-1 transition duration-300">
                 <div class="pl-6 text-slate-400">
                     <i data-lucide="search" class="w-6 h-6"></i>
                 </div>
-                <input type="text" placeholder="I am looking for... (e.g. Plumber, Accountant)" class="flex-1 p-4 outline-none text-lg text-slate-700 placeholder:text-slate-300 bg-transparent">
-                <button class="bg-brand-blue text-white px-8 py-4 rounded-full font-bold hover:bg-blue-800 transition flex items-center gap-2">
-                    Search
+                <input id="search-input" type="text" placeholder="I am looking for... (e.g. Plumber, Accountant)" class="flex-1 p-4 outline-none text-lg text-slate-700 placeholder:text-slate-300 bg-transparent">
+                <button class="bg-gbr-red text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition flex items-center gap-2">
+                    Find Pioneer
                 </button>
             </div>
             
             <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-400 uppercase tracking-wide">
-                <span>Popular:</span>
-                <span class="bg-slate-100 px-3 py-1 rounded-full cursor-pointer hover:bg-brand-blue hover:text-white transition">Attorneys</span>
-                <span class="bg-slate-100 px-3 py-1 rounded-full cursor-pointer hover:bg-brand-blue hover:text-white transition">Financial Services</span>
-                <span class="bg-slate-100 px-3 py-1 rounded-full cursor-pointer hover:bg-brand-blue hover:text-white transition">Pest Control</span>
+                <span>Trending:</span>
+                <span class="cursor-pointer hover:text-gbr-blue underline">Security</span>
+                <span class="cursor-pointer hover:text-gbr-blue underline">Legal</span>
+                <span class="cursor-pointer hover:text-gbr-blue underline">Construction</span>
             </div>
         </div>
     </header>
 
-    <section class="py-12 bg-brand-blue text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-blue-800">
-            <div class="p-4">
-                <div class="text-4xl font-black mb-2 flex justify-center gap-1">
-                    <span class="counter" data-target="15">0</span><span>+</span>
-                </div>
-                <p class="text-blue-200 text-sm uppercase tracking-widest">Years of Networking</p>
+    <section class="py-12 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-black text-gbr-red mb-1 counter" data-target="2005">0</div>
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Established</p>
             </div>
-            <div class="p-4">
-                <div class="text-4xl font-black mb-2 flex justify-center gap-1">
-                    <span class="counter" data-target="120">0</span><span>+</span>
-                </div>
-                <p class="text-blue-200 text-sm uppercase tracking-widest">Active Pioneers</p>
+            <div>
+                <div class="text-4xl font-black text-gbr-green mb-1 counter" data-target="150">0</div>
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Active Pioneers</p>
             </div>
-            <div class="p-4">
-                <div class="text-4xl font-black mb-2 flex justify-center gap-1">
-                    <span class="counter" data-target="5000">0</span><span>+</span>
-                </div>
-                <p class="text-blue-200 text-sm uppercase tracking-widest">Referrals Passed</p>
+            <div>
+                <div class="text-4xl font-black text-gbr-blue mb-1 counter" data-target="25000">0</div>
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Referrals Passed</p>
+            </div>
+            <div>
+                <div class="text-4xl font-black text-slate-800 mb-1 counter" data-target="5">0</div>
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Active Chapters</p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-50">
+    <section id="about" class="py-24 bg-gbr-light">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="text-gbr-blue font-bold uppercase tracking-widest text-sm mb-4">Our Philosophy</div>
+                <h2 class="text-4xl font-black text-slate-900 mb-6">"What You Sow, <br/>So Shall You Reap."</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    GBR4U is built on the philosophy of reciprocity. We aren't just a database; we are a family of business owners. By helping others grow their business through trusted referrals, you open the doors for them to do the same for you.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <div class="bg-white p-2 rounded-full shadow-sm text-gbr-green"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        No competitor within your specific chapter
+                    </li>
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <div class="bg-white p-2 rounded-full shadow-sm text-gbr-green"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        Access to the Virtual Business Mall
+                    </li>
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <div class="bg-white p-2 rounded-full shadow-sm text-gbr-green"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        Monthly networking breakfasts
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-gbr-red">
+                    <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-6">
+                        <div class="w-16 h-16 bg-gbr-blue/10 rounded-full flex items-center justify-center text-gbr-blue">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Networking Events</h3>
+                            <p class="text-sm text-slate-500">Weekly & Monthly meetings to connect.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-6">
+                        <div class="w-16 h-16 bg-gbr-green/10 rounded-full flex items-center justify-center text-gbr-green">
+                            <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Business Growth</h3>
+                            <p class="text-sm text-slate-500">Trackable referrals passed to you.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-gbr-red/10 rounded-full flex items-center justify-center text-gbr-red">
+                            <i data-lucide="globe" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Online Exposure</h3>
+                            <p class="text-sm text-slate-500">Feature on our high-traffic Virtual Mall.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pioneers" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900">The Virtual Business Mall</h2>
-                    <p class="text-slate-500 mt-2">Verified local businesses ready to serve you.</p>
+                    <span class="text-gbr-red font-bold uppercase tracking-widest text-sm">The Virtual Mall</span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-2">Featured Pioneers</h2>
                 </div>
-                <a href="#" class="text-brand-blue font-bold flex items-center gap-2 hover:underline group">
-                    View All Members <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                <a href="#" class="text-gbr-blue font-bold flex items-center gap-2 hover:underline group">
+                    View All Categories <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
 
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group cursor-pointer hover:-translate-y-1">
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group cursor-pointer hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-lg flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-blue-50 text-gbr-blue rounded-lg flex items-center justify-center">
                             <i data-lucide="briefcase" class="w-6 h-6"></i>
                         </div>
-                        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
+                        <span class="bg-gbr-green/10 text-gbr-green text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900">MKB Attorneys</h3>
-                    <p class="text-xs text-brand-blue font-bold uppercase tracking-wider mb-2">Legal Services</p>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2">Legal Services</p>
                     <p class="text-slate-500 text-sm mb-4 line-clamp-2">Specializing in debt collection, litigation and conveyancing services.</p>
                     <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
-                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, East London
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, EL
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group cursor-pointer hover:-translate-y-1">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group cursor-pointer hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-red-50 text-gbr-red rounded-lg flex items-center justify-center">
                             <i data-lucide="shield" class="w-6 h-6"></i>
                         </div>
-                        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
+                        <span class="bg-gbr-green/10 text-gbr-green text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900">Raptor Engineering</h3>
-                    <p class="text-xs text-orange-600 font-bold uppercase tracking-wider mb-2">Security</p>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2">Security</p>
                     <p class="text-slate-500 text-sm mb-4 line-clamp-2">High quality security gates, burglar bars and steel handrails.</p>
                     <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
-                        <i data-lucide="map-pin" class="w-3 h-3"></i> Berea, East London
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Berea, EL
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group cursor-pointer hover:-translate-y-1 border-b-4 border-b-brand-green">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group cursor-pointer hover:-translate-y-1 border-b-4 border-b-gbr-green">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-12 h-12 bg-green-50 text-brand-green rounded-lg flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-green-50 text-gbr-green rounded-lg flex items-center justify-center">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <span class="bg-brand-blue text-white text-[10px] font-bold px-2 py-1 rounded">CEO</span>
+                        <span class="bg-gbr-blue text-white text-[10px] font-bold px-2 py-1 rounded">CEO</span>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900">Willie Du Plessis</h3>
-                    <p class="text-xs text-brand-green font-bold uppercase tracking-wider mb-2">Financial Services</p>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2">Financial Services</p>
                     <p class="text-slate-500 text-sm mb-4 line-clamp-2">Comprehensive financial planning, insurance and medical aid.</p>
                     <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
-                        <i data-lucide="map-pin" class="w-3 h-3"></i> Beacon Bay, East London
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Beacon Bay, EL
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group cursor-pointer hover:-translate-y-1">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group cursor-pointer hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center">
                             <i data-lucide="printer" class="w-6 h-6"></i>
                         </div>
-                        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
+                        <span class="bg-gbr-green/10 text-gbr-green text-[10px] font-bold px-2 py-1 rounded">VERIFIED</span>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900">Target Marketing</h3>
-                    <p class="text-xs text-purple-600 font-bold uppercase tracking-wider mb-2">Branding</p>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2">Branding</p>
                     <p class="text-slate-500 text-sm mb-4 line-clamp-2">Corporate gifts, clothing, and large format printing services.</p>
                     <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
-                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, East London
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, EL
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="py-24 bg-gbr-dark text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-12">Upcoming Networking Breakfasts</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition cursor-pointer">
+                    <div class="text-gbr-green font-bold text-xl mb-2">FEB 12</div>
+                    <h3 class="text-2xl font-bold mb-4">East London Chapter</h3>
+                    <p class="text-slate-400 mb-6">Topic: "Digital Marketing Trends 2026"</p>
+                    <div class="flex justify-center items-center gap-2 text-sm text-slate-300">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> EL Golf Club
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition cursor-pointer">
+                    <div class="text-gbr-blue font-bold text-xl mb-2">FEB 14</div>
+                    <h3 class="text-2xl font-bold mb-4">Gonubie Chapter</h3>
+                    <p class="text-slate-400 mb-6">Topic: "Tax Compliance for SMEs"</p>
+                    <div class="flex justify-center items-center gap-2 text-sm text-slate-300">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Gonubie Hotel
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition cursor-pointer">
+                    <div class="text-gbr-red font-bold text-xl mb-2">FEB 19</div>
+                    <h3 class="text-2xl font-bold mb-4">Beacon Bay Chapter</h3>
+                    <p class="text-slate-400 mb-6">Topic: "Guest Speaker: Willie Du Plessis"</p>
+                    <div class="flex justify-center items-center gap-2 text-sm text-slate-300">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Beacon Bay Country Club
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-extrabold text-slate-900 mb-6">"What You Sow, <br/>So Shall You Reap."</h2>
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                    GBR4U is built on the philosophy of reciprocity. By helping others grow their business through trusted referrals, you open the doors for them to do the same for you.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                        <i data-lucide="users" class="text-brand-blue w-6 h-6"></i>
-                        <span class="font-bold text-slate-700">No competitor within your specific group</span>
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 bg-slate-50 p-10 rounded-2xl shadow-lg border border-slate-200">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-slate-900">Ready to Grow?</h2>
+                <p class="text-slate-500 mt-2">Fill in your details to visit a chapter or apply for membership.</p>
+            </div>
+
+            <form id="join-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Business Name</label>
+                        <input type="text" class="w-full p-4 rounded-lg border border-slate-300 focus:border-gbr-blue focus:ring-2 focus:ring-blue-100 outline-none transition" placeholder="e.g. Acme Consulting">
                     </div>
-                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                        <i data-lucide="layout-grid" class="text-brand-green w-6 h-6"></i>
-                        <span class="font-bold text-slate-700">Access to the Virtual Business Mall</span>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Industry</label>
+                        <select class="w-full p-4 rounded-lg border border-slate-300 focus:border-gbr-blue focus:ring-2 focus:ring-blue-100 outline-none transition bg-white">
+                            <option>Select Industry...</option>
+                            <option>Legal</option>
+                            <option>Medical</option>
+                            <option>Construction</option>
+                            <option>Finance</option>
+                        </select>
                     </div>
                 </div>
-                <button class="mt-8 bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-800 transition shadow-xl w-full md:w-auto">
-                    Apply for Membership
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Contact Person</label>
+                        <input type="text" class="w-full p-4 rounded-lg border border-slate-300 focus:border-gbr-blue focus:ring-2 focus:ring-blue-100 outline-none transition" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Email Address</label>
+                        <input type="email" class="w-full p-4 rounded-lg border border-slate-300 focus:border-gbr-blue focus:ring-2 focus:ring-blue-100 outline-none transition" placeholder="you@company.com">
+                    </div>
+                </div>
+                <button type="button" class="w-full bg-gbr-green text-white font-bold py-4 rounded-lg hover:bg-lime-600 transition shadow-lg text-lg">
+                    Request Information Pack
                 </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="img/logo.png" alt="GBR4U" class="h-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition">
+                <span class="text-sm font-bold text-slate-400">© 2026 GBR4U (Pty) Ltd</span>
             </div>
             
-            <div class="bg-gradient-to-br from-brand-blue to-blue-900 p-8 rounded-2xl text-white shadow-2xl text-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl"></div>
-                <div class="relative z-10">
-                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mx-auto flex items-center justify-center mb-6">
-                        <i data-lucide="network" class="w-10 h-10 text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Pioneers 1 - 5</h3>
-                    <p class="text-blue-200 mb-6">Active groups across East London & PE</p>
-                    <div class="grid grid-cols-2 gap-4 text-left">
-                        <div class="bg-white/10 p-3 rounded">
-                            <span class="block text-xs text-blue-300">Next Event</span>
-                            <span class="font-bold">12 Feb, 08:30</span>
-                        </div>
-                        <div class="bg-white/10 p-3 rounded">
-                            <span class="block text-xs text-blue-300">Location</span>
-                            <span class="font-bold">EL Golf Club</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-gbr-blue transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-gbr-blue transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-gbr-blue transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
             </div>
         </div>
-    </section>
-
-    <footer class="bg-brand-blue text-slate-400 py-12 text-center text-sm border-t border-white/10">
-        <div class="flex justify-center gap-6 mb-8">
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/20 transition"><i data-lucide="facebook" class="w-5 h-5 text-white"></i></a>
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/20 transition"><i data-lucide="linkedin" class="w-5 h-5 text-white"></i></a>
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/20 transition"><i data-lucide="instagram" class="w-5 h-5 text-white"></i></a>
-        </div>
-        <p>&copy; 2026 GBR4U (Pty) Ltd. "Local is Lekker!"</p>
     </footer>
 
     <script>
-        // Initialize Icons
+        // 1. Icon Loader
         lucide.createIcons();
 
-        // Simple Counter Animation
+        // 2. Odometer Logic (Counts numbers up)
         const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const increment = target / 100;
-            
-            const updateCounter = () => {
-                const c = +counter.innerText;
-                if (c < target) {
-                    counter.innerText = Math.ceil(c + increment);
-                    setTimeout(updateCounter, 20);
-                } else {
-                    counter.innerText = target;
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    
+                    // Lower increment to count faster
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Trigger animation when stats section is in view
+        let ran = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.counter');
+            if (statsSection && !ran) {
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    animateCounters();
+                    ran = true;
                 }
-            };
-            updateCounter();
+            }
         });
     </script>
 </body>
