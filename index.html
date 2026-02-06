@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBR4U | Generating Business Referrals for You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#004aad', /* Standard Corporate Blue */
+                            dark: '#0f172a',
+                            light: '#f1f5f9',
+                            green: '#10b981', /* Growth/Referral Green */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f0fdf4;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dcfce7;
+        }
+        .ticker {
+            display: flex;
+            animation: ticker 30s linear infinite;
+        }
+        .ticker-item {
+            flex-shrink: 0;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #166534;
+            font-weight: 500;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800">
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Pest Control (Beacon Bay) - 2 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Financial Services (East London) - 5 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Plumbing (Vincent) - 12 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Legal Services (Berea) - 15 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Graphic Design (Selborne) - 22 mins ago</div>
+             <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Pest Control (Beacon Bay) - 2 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Financial Services (East London) - 5 mins ago</div>
+            <div class="ticker-item"><i data-lucide="check-circle" class="w-4 h-4"></i> New Referral: Plumbing (Vincent) - 12 mins ago</div>
+        </div>
+    </div>
+
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-black text-2xl tracking-tighter text-brand-blue flex items-center gap-2">
+                <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="network" class="w-6 h-6"></i>
+                </div>
+                GBR<span class="text-brand-green">4U</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                <a href="#" class="text-brand-blue">Home</a>
+                <a href="#" class="hover:text-brand-blue transition">Find a Pro</a>
+                <a href="#" class="hover:text-brand-blue transition">Pioneers</a>
+                <a href="#" class="hover:text-brand-blue transition">Events</a>
+            </div>
+
+            <div class="flex gap-4">
+                <button class="text-brand-blue font-bold text-sm hover:underline">Member Login</button>
+                <button class="bg-brand-green text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-green-600 transition shadow-lg shadow-green-200">
+                    Join Network
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white pt-24 pb-32 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block bg-blue-50 text-brand-blue px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                Local is Lekker • Eastern Cape Based
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-tight">
+                Grow Your Business with <br/>
+                <span class="text-brand-blue">Trusted Referrals.</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto">
+                Join East London's most active business network. We connect you with verified local professionals to help you scale through word-of-mouth.
+            </p>
+
+            <div class="bg-white p-2 rounded-full shadow-2xl border border-slate-100 max-w-3xl mx-auto flex items-center gap-2">
+                <div class="pl-6 text-slate-400">
+                    <i data-lucide="search" class="w-6 h-6"></i>
+                </div>
+                <input type="text" placeholder="I am looking for... (e.g., Plumber, Accountant)" class="flex-1 p-4 outline-none text-lg text-slate-700 placeholder:text-slate-300">
+                <button class="bg-brand-blue text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition">
+                    Find Pioneer
+                </button>
+            </div>
+            <div class="mt-6 flex justify-center gap-4 text-xs font-medium text-slate-400 uppercase tracking-wide">
+                <span>Popular:</span>
+                <span class="text-brand-blue cursor-pointer hover:underline">Attorneys</span>
+                <span class="text-brand-blue cursor-pointer hover:underline">Financial Services</span>
+                <span class="text-brand-blue cursor-pointer hover:underline">Pest Control</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Featured Pioneers</h2>
+                    <p class="text-slate-500 mt-2">Verified local businesses ready to serve you.</p>
+                </div>
+                <a href="#" class="text-brand-blue font-bold flex items-center gap-2 hover:underline">
+                    View Virtual Mall <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">MKB Attorneys</h3>
+                    <p class="text-xs text-brand-blue font-bold uppercase tracking-wider mb-2">Legal Services</p>
+                    <p class="text-slate-500 text-sm mb-4">Specializing in debt collection and conveyancing.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, EL
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-600 group-hover:text-white transition">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Raptor Engineering</h3>
+                    <p class="text-xs text-orange-600 font-bold uppercase tracking-wider mb-2">Security</p>
+                    <p class="text-slate-500 text-sm mb-4">Security gates, burglar bars and steel handrails.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Berea, EL
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-green text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">CEO</div>
+                    <div class="w-12 h-12 bg-green-50 text-brand-green rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-green group-hover:text-white transition">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Willie Du Plessis</h3>
+                    <p class="text-xs text-brand-green font-bold uppercase tracking-wider mb-2">Financial Services</p>
+                    <p class="text-slate-500 text-sm mb-4">Comprehensive financial planning and insurance.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Beacon Bay, EL
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i data-lucide="printer" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Target Marketing</h3>
+                    <p class="text-xs text-purple-600 font-bold uppercase tracking-wider mb-2">Branding</p>
+                    <p class="text-slate-500 text-sm mb-4">Corporate gifts, clothing, and printing services.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Selborne, EL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-6">"What You Sow, <br/>So Shall You Reap."</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    GBR4U is built on the philosophy of reciprocity. By helping others grow their business through trusted referrals, you open the doors for them to do the same for you.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <i data-lucide="check-circle" class="text-brand-green"></i> No competitor within your specific group
+                    </li>
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <i data-lucide="check-circle" class="text-brand-green"></i> Access to the Virtual Business Mall
+                    </li>
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <i data-lucide="check-circle" class="text-brand-green"></i> Monthly networking events (OSPO)
+                    </li>
+                </ul>
+                <button class="mt-8 bg-brand-dark text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-700 transition">
+                    Apply for Membership
+                </button>
+            </div>
+            <div class="bg-brand-light p-8 rounded-2xl border-2 border-dashed border-slate-300 text-center">
+                <div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center shadow-sm mb-4">
+                    <i data-lucide="users" class="w-10 h-10 text-brand-blue"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900">Pioneers 1 - 5</h3>
+                <p class="text-slate-500 mt-2">Active groups across East London & PE</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-slate-400 py-12 text-center text-sm">
+        <p>&copy; 2026 GBR4U (Pty) Ltd. "Local is Lekker!"</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
